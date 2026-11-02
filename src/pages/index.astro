@@ -36,11 +36,11 @@ const steps = [
         <h2>Find your next favorite piece</h2>
         <p class="lead">Browse our newest arrivals on the apps you already use.</p>
       </div>
-      <div class="cards">
+      <ul class="shops">
         {shops.map((s) => (
-          <a class="card" href={s.href}><h3>{s.name}</h3><span>Visit our closet →</span></a>
+          <li><a href={s.href} aria-label={`Shop on ${s.name}`}><span class="name">{s.name}</span><span class="go" aria-hidden="true">→</span></a></li>
         ))}
-      </div>
+      </ul>
     </div>
   </section>
 
