@@ -62,12 +62,12 @@ section { padding: 4.5rem 0; }
 .tint { background: var(--lilac); }
 .section-head { max-width: 40rem; margin-bottom: 2.5rem; }
 
-.shops { list-style: none; margin: 0; padding: 0; border-top: 1px solid rgba(255,255,255,.25); }
-.shops a { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.6rem .25rem; border-bottom: 1px solid rgba(255,255,255,.25); text-decoration: none; transition: padding .2s, background .2s; }
-.shops .name { font-family: var(--serif); font-size: clamp(1.8rem, 4.5vw, 3rem); font-weight: 600; line-height: 1; }
-.shops .go { display: inline-flex; align-items: center; justify-content: center; flex: none; width: 3rem; height: 3rem; border-radius: 50%; background: var(--lilac); color: var(--forest); font-size: 1.3rem; transition: transform .2s; }
-.shops a:hover { padding-left: 1rem; background: rgba(255,255,255,.05); }
-.shops a:hover .go { transform: translateX(-.5rem) rotate(-45deg); }
+.tiles { display: flex; flex-wrap: wrap; gap: 1.25rem; list-style: none; margin: 0; padding: 0; }
+.tiles a { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .9rem; width: 13rem; aspect-ratio: 1; padding: 1.25rem; border-radius: var(--radius); background: var(--lilac); color: var(--forest); text-decoration: none; transition: transform .2s, box-shadow .2s; }
+.tiles .name { font-family: var(--serif); font-size: 1.9rem; font-weight: 600; line-height: 1; }
+.tiles .go { font-size: .85rem; font-weight: 600; letter-spacing: .04em; opacity: .75; }
+.tiles a:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,.28); }
+.tiles a:hover .go { opacity: 1; text-decoration: underline; text-underline-offset: 4px; }
 
 .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; list-style: none; padding: 0; margin: 0; counter-reset: step; }
 .steps li { counter-increment: step; padding-top: 1.25rem; border-top: 2px solid var(--forest); }
@@ -110,6 +110,7 @@ footer.site::after { content: none; }
 
 @media (max-width: 760px) {
   .hero .grid, .split, .steps, .foot { grid-template-columns: 1fr; }
+  .tiles a { width: calc(50% - .65rem); }
   .hero-photo { aspect-ratio: 4 / 3; }
   section { padding: 3rem 0; }
   nav { gap: .9rem; font-size: .92rem; }
