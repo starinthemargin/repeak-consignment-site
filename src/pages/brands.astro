@@ -2,6 +2,18 @@
 import Base from '../layouts/Base.astro';
 import Ridge from '../components/Ridge.astro';
 import { brands } from '../data/brands';
+
+// File each brand under its first letter, ignoring leading punctuation ("& Other Stories" -> O).
+const key = (b: string) => b.replace(/^[^\p{L}\p{N}]+/u, '');
+const sorted = [...brands].sort((a, z) => key(a).localeCompare(key(z), 'en', { sensitivity: 'base' }));
+const groups = new Map<string, string[]>();
+for (const b of sorted) {
+  const first = key(b).charAt(0).normalize('NFD').charAt(0).toUpperCase();
+  const letter = /[A-Z]/.test(first) ? first : '#';
+  groups.set(letter, [...(groups.get(letter) ?? []), b]);
+}
+const alphabet = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ', '#'];
+const id = (l: string) => (l === '#' ? 'num' : l.toLowerCase());
 ---
 <Base title="Brands we love | RePeak Consignment">
   <div class="page-head">
@@ -12,11 +24,23 @@ import { brands } from '../data/brands';
     </div>
     <Ridge />
   </div>
-  <section>
+  <nav class="az" aria-label="Jump to a letter">
     <div class="wrap">
-      <ul class="brand-list">
-        {brands.map((b) => <li>{b}</li>)}
-      </ul>
+      {alphabet.map((l) => groups.has(l)
+        ? <a href={`#${id(l)}`}>{l}</a>
+        : <span aria-hidden="true">{l}</span>)}
+    </div>
+  </nav>
+  <section class="brand-groups">
+    <div class="wrap">
+      {[...groups].map(([letter, list]) => (
+        <div class="brand-group" id={id(letter)}>
+          <h2>{letter}</h2>
+          <ul class="brand-list">
+            {list.map((b) => <li>{b}</li>)}
+          </ul>
+        </div>
+      ))}
       <div class="actions"><a class="btn btn-ghost" href="/consign-with-us/">Back to consigning</a></div>
     </div>
   </section>
