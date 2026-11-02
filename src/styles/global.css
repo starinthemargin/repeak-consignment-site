@@ -93,6 +93,11 @@ section { padding: 4.5rem 0; }
 .prose { max-width: 40rem; }
 .prose p { font-size: 1.1rem; }
 
+.steps-5 { grid-template-columns: repeat(5, 1fr); gap: 1.5rem; }
+.checks { list-style: none; padding: 0; margin: 1.25rem 0 0; display: grid; gap: .6rem; }
+.checks li { padding-left: 1.9rem; position: relative; }
+.checks li::before { content: ''; position: absolute; left: 0; top: .5em; width: .9rem; height: .55rem; background: var(--forest); clip-path: polygon(0 100%, 50% 0, 100% 100%); }
+
 /* form */
 form { display: grid; gap: 1.1rem; max-width: 34rem; }
 label { display: grid; gap: .35rem; font-weight: 500; }
@@ -113,8 +118,9 @@ footer.site::after { content: none; }
 .foot img { width: 90px; height: auto; margin-bottom: .5rem; }
 .legal { margin: 0; padding: 1rem max(1.25rem, calc((100% - var(--max)) / 2 + 1.25rem)) 2rem; font-size: .85rem; color: #b8c9b4; }
 
+@media (max-width: 1000px) { .steps-5 { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 760px) {
-  .split, .steps, .foot { grid-template-columns: 1fr; }
+  .split, .steps, .steps-5, .foot { grid-template-columns: 1fr; }
   .tiles a { width: calc(50% - .65rem); }
   section { padding: 3rem 0; }
   nav { gap: .9rem; font-size: .92rem; }

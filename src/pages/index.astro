@@ -7,9 +7,9 @@ const shops = [
   { name: 'Depop', logo: '/shop-depop.png', href: 'https://www.depop.com/repeakconsignment/' },
 ];
 const steps = [
-  { title: 'Send us your pieces', text: 'Tell us what you have. We review it and confirm what we can list.' },
-  { title: 'We do the work', text: 'We photograph, price, and list your items where buyers are already shopping.' },
-  { title: 'You get paid', text: 'When a piece sells, you earn your share.' },
+  { title: 'Sign and drop off', text: 'Sign our consignment agreement and bring us your clean, gently used pieces.' },
+  { title: 'We list and sell', text: 'We photograph, price, and list your items on the resale apps where buyers are already shopping.' },
+  { title: 'Get paid monthly', text: 'Your earnings arrive every month, with a statement showing exactly what sold.' },
 ];
 ---
 <Base title="RePeak Consignment | Sustainable online consignment in Denver, CO">
@@ -47,7 +47,6 @@ const steps = [
         <p class="eyebrow">Consign</p>
         <h2>Clear your closet. We'll handle the climb.</h2>
       </div>
-      <!-- TODO: confirm process and commission details -->
       <ol class="steps">
         {steps.map((s) => <li><h3>{s.title}</h3><p>{s.text}</p></li>)}
       </ol>

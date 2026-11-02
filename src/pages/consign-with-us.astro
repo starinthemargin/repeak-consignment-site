@@ -1,11 +1,20 @@
 ---
 import Base from '../layouts/Base.astro';
 import Ridge from '../components/Ridge.astro';
+const email = 'info@repeakconsignment.com';
 const steps = [
-  { title: 'Tell us what you have', text: 'Fill out the form below.' },
-  { title: 'We review', text: 'We confirm what we can list.' },
-  { title: 'We list and sell', text: 'Photos, pricing, and listings are on us.' },
-  { title: 'You get paid', text: 'When a piece sells, you earn your share.' },
+  { title: 'Get in touch', text: 'Email us to say hello and tell us a little about what you have.' },
+  { title: 'Sign the agreement', text: 'We walk you through our consignment agreement, and you sign it before we take your items.' },
+  { title: 'Drop off your items', text: 'Bring us your pieces. We check each one against our condition standards.' },
+  { title: 'We list and sell', text: 'We photograph, price, and list your items on the resale apps. Each item stays listed for up to 180 days.' },
+  { title: 'Get paid monthly', text: 'By the 15th of each month, we pay your share of the previous month\'s completed sales and email you a sales statement.' },
+];
+const standards = [
+  'New and unused, or gently used',
+  'Washed or cleaned, including pet hair removed',
+  'In good repair',
+  'Not excessively wrinkled',
+  'Authentic. No replicas or imitations',
 ];
 ---
 <Base title="Consign with us | RePeak Consignment">
@@ -13,28 +22,45 @@ const steps = [
     <div class="wrap">
       <p class="eyebrow">Consign</p>
       <h1>Consign with us</h1>
-      <p class="lead">Turn your pre-loved pieces into something new.</p>
+      <p class="lead">Turn your pre-loved pieces into something new. We handle the listing, selling, and shipping.</p>
     </div>
     <Ridge />
   </div>
   <section>
     <div class="wrap">
-      <!-- TODO: confirm process, commission split, and accepted brands -->
-      <ol class="steps" style="grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));">
+      <div class="section-head">
+        <p class="eyebrow">How it works</p>
+        <h2>Five simple steps</h2>
+      </div>
+      <ol class="steps steps-5">
         {steps.map((s) => <li><h3>{s.title}</h3><p>{s.text}</p></li>)}
       </ol>
     </div>
   </section>
   <section class="tint">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">What we accept</p>
+        <h2>Pieces ready to sell</h2>
+        <p class="lead">Items that don't meet these standards can't be listed.</p>
+        <ul class="checks">
+          {standards.map((t) => <li>{t}</li>)}
+        </ul>
+      </div>
+      <div>
+        <p class="eyebrow">Good to know</p>
+        <h2>Unsold items</h2>
+        <p class="lead">After 180 days, we let you know by email and you have 14 days to pick up anything that hasn't sold. We don't offer return shipping.</p>
+      </div>
+    </div>
+  </section>
+  <section class="dark cta">
     <div class="wrap">
-      <h2>Get started</h2>
-      <!-- TODO: set action to a form endpoint (Formspree, Netlify Forms, etc.) -->
-      <form method="post" action="#">
-        <label>Name <input name="name" required /></label>
-        <label>Email <input name="email" type="email" required /></label>
-        <label>What would you like to consign? <textarea name="items" rows="5" required></textarea></label>
-        <button class="btn" type="submit">Send</button>
-      </form>
+      <div class="section-head">
+        <h2>Ready to get started?</h2>
+        <p class="lead">Send us a note and we'll take it from there.</p>
+      </div>
+      <div class="actions"><a class="btn btn-light" href={`mailto:${email}?subject=Consigning%20with%20RePeak`}>Email {email}</a></div>
     </div>
   </section>
 </Base>
