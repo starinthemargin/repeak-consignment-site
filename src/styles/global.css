@@ -53,7 +53,7 @@ nav .btn { color: #fff; }
 .hero h1 { color: var(--forest); }
 .hero .lead { margin-inline: auto; }
 .hero .actions { justify-content: center; }
-.hero-pano { position: relative; margin-top: -3rem; height: clamp(260px, 38vw, 520px); background: url('/mountains.jpg') center bottom / cover no-repeat; }
+.hero-pano { position: relative; margin-top: -3rem; height: clamp(220px, 32vw, 460px); background: url('/mountains.jpg') center bottom / cover no-repeat; }
 .hero-pano::before, .hero-pano::after { content: ''; position: absolute; left: 0; right: 0; }
 .hero-pano::before { top: 0; height: 55%; background: linear-gradient(var(--lilac), rgba(232, 231, 240, 0)); }
 .hero-pano::after { bottom: -1px; height: 35%; background: linear-gradient(rgba(13, 51, 8, 0), var(--forest)); }
