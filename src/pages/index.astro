@@ -31,7 +31,7 @@ const shops = [
       </div>
       <ul class="tiles">
         {shops.map((s) => (
-          <li><a href={s.href} aria-label={`Shop on ${s.name}`}><img class="plogo" src={s.logo} alt={s.name} /><span class="go">Shop now →</span></a></li>
+          <li><a href={s.href} aria-label={`Shop on ${s.name}`}><img class="plogo" data-brand={s.name} src={s.logo} alt={s.name} /><span class="go">Shop now →</span></a></li>
         ))}
       </ul>
     </div>

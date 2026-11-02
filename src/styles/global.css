@@ -69,6 +69,7 @@ section { padding: 4.5rem 0; }
 .tiles { display: grid; grid-template-columns: repeat(3, 13rem); gap: 1.25rem; list-style: none; margin: 0; padding: 0; }
 .tiles a { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .9rem; width: 100%; aspect-ratio: 1; padding: 1.25rem; border-radius: var(--radius); background: var(--lilac); color: var(--forest); text-decoration: none; transition: transform .2s, box-shadow .2s; }
 .tiles .plogo { width: 78%; height: 3rem; object-fit: contain; }
+.tiles .plogo[data-brand='Poshmark'] { width: 92%; height: 3.4rem; }
 .tiles .name { font-family: var(--serif); font-size: 1.9rem; font-weight: 600; line-height: 1; }
 .tiles .go { font-size: .85rem; font-weight: 600; letter-spacing: .04em; opacity: .75; }
 .tiles a:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,.28); }
@@ -149,6 +150,7 @@ footer.site::after { content: none; }
   .tiles { grid-template-columns: 1fr; }
   .tiles a { width: 100%; aspect-ratio: auto; padding: 1.5rem; }
   .tiles .plogo { width: 55%; max-width: 11rem; }
+  .tiles .plogo[data-brand='Poshmark'] { width: 70%; max-width: 14rem; }
   .foot { gap: 1.75rem; }
   .az .wrap { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
   .brand-group { scroll-margin-top: 7.5rem; grid-template-columns: 3rem 1fr; }
