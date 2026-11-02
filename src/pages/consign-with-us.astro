@@ -1,14 +1,8 @@
 ---
 import Base from '../layouts/Base.astro';
 import Ridge from '../components/Ridge.astro';
+import { steps } from '../data/steps';
 const email = 'info@repeakconsignment.com';
-const steps = [
-  { title: 'Get in touch', text: 'Email us to say hello and tell us a little about what you have.' },
-  { title: 'Sign the agreement', text: 'We walk you through our consignment agreement, and you sign it before we take your items.' },
-  { title: 'Drop off your items', text: 'Bring us your pieces. We check each one against our condition standards.' },
-  { title: 'We list and sell', text: 'We photograph, price, and list your items on the resale apps. Each item stays listed for up to 180 days.' },
-  { title: 'Get paid monthly', text: 'By the 15th of each month, we pay your share of the previous month\'s completed sales and email you a sales statement.' },
-];
 const standards = [
   'New and unused, or gently used',
   'Washed or cleaned, including pet hair removed',
@@ -30,9 +24,9 @@ const standards = [
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">How it works</p>
-        <h2>Five simple steps</h2>
+        <h2>Three simple steps</h2>
       </div>
-      <ol class="steps steps-5">
+      <ol class="steps">
         {steps.map((s) => <li><h3>{s.title}</h3><p>{s.text}</p></li>)}
       </ol>
     </div>

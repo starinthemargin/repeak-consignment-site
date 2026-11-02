@@ -1,15 +1,11 @@
 ---
 import Base from '../layouts/Base.astro';
 import Ridge from '../components/Ridge.astro';
+import { steps } from '../data/steps';
 const shops = [
   { name: 'Poshmark', logo: '/shop-poshmark.png', href: 'https://poshmark.com/closet/repeakconsign' },
   { name: 'Mercari', logo: '/shop-mercari.png', href: 'https://www.mercari.com/u/repeakconsignment/' },
   { name: 'Depop', logo: '/shop-depop.png', href: 'https://www.depop.com/repeakconsignment/' },
-];
-const steps = [
-  { title: 'Sign and drop off', text: 'Sign our consignment agreement and bring us your clean, gently used pieces.' },
-  { title: 'We list and sell', text: 'We photograph, price, and list your items on the resale apps where buyers are already shopping.' },
-  { title: 'Get paid monthly', text: 'Your earnings arrive every month, with a statement showing exactly what sold.' },
 ];
 ---
 <Base title="RePeak Consignment | Sustainable online consignment in Denver, CO">
