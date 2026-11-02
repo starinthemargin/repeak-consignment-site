@@ -3,13 +3,19 @@ import Base from '../layouts/Base.astro';
 import Ridge from '../components/Ridge.astro';
 import { brands } from '../data/brands';
 
-// File each brand under its first letter, ignoring leading punctuation ("& Other Stories" -> O).
-const key = (b: string) => b.replace(/^[^\p{L}\p{N}]+/u, '');
-const sorted = [...brands].sort((a, z) => key(a).localeCompare(key(z), 'en', { sensitivity: 'base' }));
+// File each brand under its first character. Anything starting with a number or symbol goes under "#".
+const letterOf = (b: string) => {
+  const first = b.charAt(0).normalize('NFD').charAt(0).toUpperCase();
+  return /[A-Z]/.test(first) ? first : '#';
+};
+const sorted = [...brands].sort((a, z) => {
+  const [la, lz] = [letterOf(a), letterOf(z)];
+  if (la !== lz) return la === '#' ? -1 : lz === '#' ? 1 : la.localeCompare(lz);
+  return a.localeCompare(z, 'en', { sensitivity: 'base', ignorePunctuation: true });
+});
 const groups = new Map<string, string[]>();
 for (const b of sorted) {
-  const first = key(b).charAt(0).normalize('NFD').charAt(0).toUpperCase();
-  const letter = /[A-Z]/.test(first) ? first : '#';
+  const letter = letterOf(b);
   groups.set(letter, [...(groups.get(letter) ?? []), b]);
 }
 const alphabet = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ', '#'];
