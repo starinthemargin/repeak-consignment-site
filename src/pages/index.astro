@@ -2,9 +2,9 @@
 import Base from '../layouts/Base.astro';
 import Ridge from '../components/Ridge.astro';
 const shops = [
-  { name: 'Poshmark', href: 'https://poshmark.com/closet/repeakconsign' },
-  { name: 'Mercari', href: 'https://www.mercari.com/u/repeakconsignment/' },
-  { name: 'Depop', href: 'https://www.depop.com/repeakconsignment/' },
+  { name: 'Poshmark', logo: '/shop-poshmark.png', href: 'https://poshmark.com/closet/repeakconsign' },
+  { name: 'Mercari', logo: '/shop-mercari.png', href: 'https://www.mercari.com/u/repeakconsignment/' },
+  { name: 'Depop', logo: '/shop-depop.png', href: 'https://www.depop.com/repeakconsignment/' },
 ];
 const steps = [
   { title: 'Send us your pieces', text: 'Tell us what you have. We review it and confirm what we can list.' },
@@ -38,7 +38,7 @@ const steps = [
       </div>
       <ul class="tiles">
         {shops.map((s) => (
-          <li><a href={s.href} aria-label={`Shop on ${s.name}`}><span class="name">{s.name}</span><span class="go">Shop now →</span></a></li>
+          <li><a href={s.href} aria-label={`Shop on ${s.name}`}><img class="plogo" src={s.logo} alt={s.name} /><span class="go">Shop now →</span></a></li>
         ))}
       </ul>
     </div>
