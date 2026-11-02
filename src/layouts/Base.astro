@@ -25,6 +25,13 @@ const links = [
     <meta name="description" content={description} />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <title>{title}</title>
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-GS68MH404B"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-GS68MH404B');
+    </script>
   </head>
   <body>
     <header class="site">
