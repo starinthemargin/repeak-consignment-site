@@ -83,6 +83,9 @@ section { padding: 4.5rem 0; }
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center; }
 .split .photo { aspect-ratio: 1; border-radius: var(--radius); background: url('/rack.jpg') center / cover; }
 
+.mist-top { position: relative; overflow: hidden; padding-top: 7rem; }
+.mist-top::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 17rem; background: url('/mountains-mist.webp') center bottom / cover no-repeat; opacity: .6; -webkit-mask-image: linear-gradient(#000 45%, transparent); mask-image: linear-gradient(#000 45%, transparent); pointer-events: none; }
+.mist-top > .wrap { position: relative; z-index: 1; }
 .cta { position: relative; overflow: hidden; text-align: center; padding-bottom: 11rem; }
 .cta::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 9rem; background: url('/mountains-mist.webp') center bottom / cover no-repeat; opacity: .35; pointer-events: none; -webkit-mask-image: linear-gradient(transparent, #000 70%); mask-image: linear-gradient(transparent, #000 70%); }
 main:has(> .cta:last-child) + footer.site { background: var(--forest); }
