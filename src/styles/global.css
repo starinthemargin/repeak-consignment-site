@@ -66,8 +66,8 @@ section { padding: 4.5rem 0; }
 .tint { background: var(--lilac); }
 .section-head { max-width: 40rem; margin-bottom: 2.5rem; }
 
-.tiles { display: flex; flex-wrap: wrap; gap: 1.25rem; list-style: none; margin: 0; padding: 0; }
-.tiles a { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .9rem; width: 13rem; aspect-ratio: 1; padding: 1.25rem; border-radius: var(--radius); background: var(--lilac); color: var(--forest); text-decoration: none; transition: transform .2s, box-shadow .2s; }
+.tiles { display: grid; grid-template-columns: repeat(3, 13rem); gap: 1.25rem; list-style: none; margin: 0; padding: 0; }
+.tiles a { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .9rem; width: 100%; aspect-ratio: 1; padding: 1.25rem; border-radius: var(--radius); background: var(--lilac); color: var(--forest); text-decoration: none; transition: transform .2s, box-shadow .2s; }
 .tiles .plogo { width: 78%; height: 3rem; object-fit: contain; }
 .tiles .name { font-family: var(--serif); font-size: 1.9rem; font-weight: 600; line-height: 1; }
 .tiles .go { font-size: .85rem; font-weight: 600; letter-spacing: .04em; opacity: .75; }
@@ -137,7 +137,10 @@ footer.site::after { content: none; }
 
 @media (max-width: 760px) {
   .split, .steps, .foot, .detail { grid-template-columns: 1fr; gap: .5rem; }
-  .tiles a { width: calc(50% - .65rem); }
+  .tiles { grid-template-columns: 1fr; }
+  .tiles a { width: 100%; aspect-ratio: auto; padding: 1.5rem; }
+  .tiles .plogo { width: 55%; max-width: 11rem; }
+  .foot { gap: 1.75rem; }
   section { padding: 3rem 0; }
   nav { gap: .9rem; font-size: .92rem; }
   nav .btn { display: none; }
