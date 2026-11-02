@@ -81,6 +81,7 @@ section { padding: 4.5rem 0; }
 .steps p { color: var(--muted); margin: 0; }
 
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center; }
+.portrait { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: var(--radius); }
 .split .photo { aspect-ratio: 1; border-radius: var(--radius); background: url('/rack.jpg') center / cover; }
 
 .mist-top { position: relative; overflow: hidden; padding-top: 9rem; }
