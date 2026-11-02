@@ -83,8 +83,8 @@ section { padding: 4.5rem 0; }
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center; }
 .split .photo { aspect-ratio: 1; border-radius: var(--radius); background: url('/rack.jpg') center / cover; }
 
-.mist-top { position: relative; overflow: hidden; padding-top: 7rem; }
-.mist-top::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 17rem; background: url('/mountains-mist.webp') center bottom / cover no-repeat; opacity: .6; -webkit-mask-image: linear-gradient(#000 45%, transparent); mask-image: linear-gradient(#000 45%, transparent); pointer-events: none; }
+.mist-top { position: relative; overflow: hidden; padding-top: 9rem; }
+.mist-top::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 22rem; background: url('/mountains-mist-lilac.webp') center bottom / cover no-repeat; opacity: .85; -webkit-mask-image: linear-gradient(#000 55%, transparent); mask-image: linear-gradient(#000 55%, transparent); pointer-events: none; }
 .mist-top > .wrap { position: relative; z-index: 1; }
 .cta { position: relative; overflow: hidden; text-align: center; padding-bottom: 11rem; }
 .cta::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 9rem; background: url('/mountains-mist.webp') center bottom / cover no-repeat; opacity: .35; pointer-events: none; -webkit-mask-image: linear-gradient(transparent, #000 70%); mask-image: linear-gradient(transparent, #000 70%); }
@@ -113,6 +113,12 @@ main:has(> .cta:last-child) + footer.site .ridge { display: none; }
 .brand-list { list-style: none; padding: 0; margin: 0 0 2rem; columns: 4 12rem; column-gap: 2rem; }
 .brand-list li { padding: .25rem 0; break-inside: avoid; }
 
+.notice-wrap { padding: 2.5rem 0 0; }
+.notice { display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding: 2rem 2.25rem; border-radius: var(--radius); background: var(--lilac); color: var(--forest); border: 1px solid #d3d1e2; }
+.notice h2 { font-size: 1.6rem; margin-bottom: .4rem; }
+.notice p:last-child { margin: 0; max-width: 40rem; color: var(--ink); }
+.notice .btn { flex: none; }
+
 /* form */
 form { display: grid; gap: 1.1rem; max-width: 34rem; }
 label { display: grid; gap: .35rem; font-weight: 500; }
@@ -135,6 +141,7 @@ footer.site::after { content: none; }
 
 @media (max-width: 760px) {
   .split, .steps, .foot, .detail { grid-template-columns: 1fr; gap: .5rem; }
+  .notice { flex-direction: column; align-items: flex-start; padding: 1.5rem; }
   .tiles a { width: calc(50% - .65rem); }
   section { padding: 3rem 0; }
   nav { gap: .9rem; font-size: .92rem; }
