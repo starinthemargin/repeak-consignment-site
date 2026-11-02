@@ -64,7 +64,7 @@ section { padding: 4.5rem 0; }
 
 .tiles { display: flex; flex-wrap: wrap; gap: 1.25rem; list-style: none; margin: 0; padding: 0; }
 .tiles a { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .9rem; width: 13rem; aspect-ratio: 1; padding: 1.25rem; border-radius: var(--radius); background: var(--lilac); color: var(--forest); text-decoration: none; transition: transform .2s, box-shadow .2s; }
-.tiles .plogo { width: 78%; max-height: 3.2rem; object-fit: contain; }
+.tiles .plogo { width: 78%; height: 3rem; object-fit: contain; }
 .tiles .name { font-family: var(--serif); font-size: 1.9rem; font-weight: 600; line-height: 1; }
 .tiles .go { font-size: .85rem; font-weight: 600; letter-spacing: .04em; opacity: .75; }
 .tiles a:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,.28); }
