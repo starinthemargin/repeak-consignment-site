@@ -12,6 +12,6 @@ export default defineConfig({
     '/contact': '/consign-with-us/',
     '/service-page/consignment-intake-new-client': '/consign-with-us/',
     '/service-page/existing-client-drop-go': '/consign-with-us/',
-    '/english-refund-policy': '/refund-policy/',
+    '/english-refund-policy': '/',
   },
 });
