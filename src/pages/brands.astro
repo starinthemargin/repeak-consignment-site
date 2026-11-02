@@ -1,0 +1,23 @@
+---
+import Base from '../layouts/Base.astro';
+import Ridge from '../components/Ridge.astro';
+import { brands } from '../data/brands';
+---
+<Base title="Brands we love | RePeak Consignment">
+  <div class="page-head">
+    <div class="wrap">
+      <p class="eyebrow">Consign</p>
+      <h1>Brands we love</h1>
+      <p class="lead">A general guide to what we love to see. We sometimes accept brands that aren't listed, depending on item type and quality. Bringing a brand from this list isn't a guarantee we'll accept the item.</p>
+    </div>
+    <Ridge />
+  </div>
+  <section>
+    <div class="wrap">
+      <ul class="brand-list">
+        {brands.map((b) => <li>{b}</li>)}
+      </ul>
+      <div class="actions"><a class="btn btn-ghost" href="/consign-with-us/">Back to consigning</a></div>
+    </div>
+  </section>
+</Base>

@@ -97,6 +97,13 @@ section { padding: 4.5rem 0; }
 .checks li { padding-left: 1.9rem; position: relative; }
 .checks li::before { content: ''; position: absolute; left: 0; top: .5em; width: .9rem; height: .55rem; background: var(--forest); clip-path: polygon(0 100%, 50% 0, 100% 100%); }
 
+.detail { display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; padding: 2rem 0; border-top: 1px solid #c9c8d6; }
+.detail h3 { font-size: 1.5rem; }
+.detail p { max-width: 38rem; }
+.detail a { text-underline-offset: 3px; }
+.brand-list { list-style: none; padding: 0; margin: 0 0 2rem; columns: 4 12rem; column-gap: 2rem; }
+.brand-list li { padding: .25rem 0; break-inside: avoid; }
+
 /* form */
 form { display: grid; gap: 1.1rem; max-width: 34rem; }
 label { display: grid; gap: .35rem; font-weight: 500; }
@@ -118,7 +125,7 @@ footer.site::after { content: none; }
 .legal { margin: 0; padding: 1rem max(1.25rem, calc((100% - var(--max)) / 2 + 1.25rem)) 2rem; font-size: .85rem; color: #b8c9b4; }
 
 @media (max-width: 760px) {
-  .split, .steps, .foot { grid-template-columns: 1fr; }
+  .split, .steps, .foot, .detail { grid-template-columns: 1fr; gap: .5rem; }
   .tiles a { width: calc(50% - .65rem); }
   section { padding: 3rem 0; }
   nav { gap: .9rem; font-size: .92rem; }

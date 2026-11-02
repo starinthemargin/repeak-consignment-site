@@ -2,11 +2,13 @@
 import Base from '../layouts/Base.astro';
 import Ridge from '../components/Ridge.astro';
 import { steps } from '../data/steps';
+import { waitListOpen } from '../data/consign';
 const email = 'info@repeakconsignment.com';
-const standards = [
-  'New and unused, or gently used',
-  'Washed or cleaned, including pet hair removed',
-  'In good repair',
+const checks = [
+  'Freshly laundered or dry cleaned',
+  'In excellent condition: new and unused, or gently used',
+  'Free of stains, holes, and pet hair',
+  'In good repair, with no missing buttons or unraveling hems',
   'Not excessively wrinkled',
   'Authentic. No replicas or imitations',
 ];
@@ -25,6 +27,7 @@ const standards = [
       <div class="section-head">
         <p class="eyebrow">How it works</p>
         <h2>Three simple steps</h2>
+        <p class="lead">Based in Denver, CO? Here's the big picture.</p>
       </div>
       <ol class="steps">
         {steps.map((s) => <li><h3>{s.title}</h3><p>{s.text}</p></li>)}
@@ -32,19 +35,55 @@ const standards = [
     </div>
   </section>
   <section class="tint">
-    <div class="wrap split">
-      <div>
-        <p class="eyebrow">What we accept</p>
-        <h2>Pieces ready to sell</h2>
-        <p class="lead">Items that don't meet these standards can't be listed.</p>
-        <ul class="checks">
-          {standards.map((t) => <li>{t}</li>)}
-        </ul>
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">The details</p>
+        <h2>Everything to know before you bring us your pieces</h2>
       </div>
-      <div>
-        <p class="eyebrow">Good to know</p>
-        <h2>Unsold items</h2>
-        <p class="lead">After 180 days, we let you know by email and you have 14 days to pick up anything that hasn't sold. We don't offer return shipping.</p>
+
+      <div class="detail">
+        <h3>What we accept</h3>
+        <div>
+          <p>We gladly accept women's and men's on-trend, boutique, and designer clothing, footwear, bags, and accessories.</p>
+          <p>Please bring only your best items. Aim for pieces that would easily sell for $20 or more. If you don't think someone would pay that, a yard sale or donation may be a better fit.</p>
+          <p>Browse our <a href="/brands/">Brands we love</a> list and edit your selection to match.</p>
+        </div>
+      </div>
+
+      <div class="detail">
+        <h3>Condition</h3>
+        <div>
+          <p>Please pre-inspect everything before you bring it in. Look for stains, holes, pilling, deodorant marks, unraveling hems, and missing buttons, and take the time to clean or repair if needed. Items we receive should be:</p>
+          <ul class="checks">
+            {checks.map((t) => <li>{t}</li>)}
+          </ul>
+          <p>Items that don't meet these standards can't be listed, and may be donated or recycled.</p>
+        </div>
+      </div>
+
+      <div class="detail">
+        <h3>Drop-offs</h3>
+        <div>
+          <p>We're a home-based, online-only shop with limited storage space, so we work from a wait list. Because of the effort it takes to prepare items for listing, please bring no more than <strong>25 items per appointment</strong>.</p>
+          {waitListOpen
+            ? <p>Email us to join the wait list, and we'll contact you when space opens up.</p>
+            : <p><strong>Our wait list is currently full.</strong> Please check back soon.</p>}
+        </div>
+      </div>
+
+      <div class="detail">
+        <h3>Drop &amp; Go</h3>
+        <div>
+          <p>Have you consigned with us before? Use Drop &amp; Go: drop off your items during your scheduled time and go on about your day. Email <a href={`mailto:${email}?subject=Schedule%20a%20Drop%20%26%20Go%20Time`}>{email}</a> to schedule. Drop &amp; Go is limited to 25 items per client, and items should follow the guidelines above.</p>
+        </div>
+      </div>
+
+      <div class="detail">
+        <h3>Consignment period</h3>
+        <div>
+          <p>Each item stays listed for six months (180 days) from the date it's first listed.</p>
+          <p>When items expire, we'll let you know by email, usually along with your monthly statement. You'll have 14 days to arrange a pickup of anything unsold. We don't offer return shipping. Items that aren't picked up in time become ours to donate or recycle.</p>
+        </div>
       </div>
     </div>
   </section>
