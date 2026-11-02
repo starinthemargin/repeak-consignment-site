@@ -1,16 +1,28 @@
 ---
 import Base from '../layouts/Base.astro';
+import Ridge from '../components/Ridge.astro';
 ---
 <Base title="About | RePeak Consignment">
-  <section class="wrap">
-    <h1>About</h1>
-    <p>Hello! I'm Meagan, the founder of RePeak Consignment.</p>
-    <p>A few years back, I realized none of my clothes fit anymore, and I needed an entirely new wardrobe. That's when I began selling my clothes online (and buying new-to-me pieces!) and quickly became hooked. After experiencing success, friends started bringing me their clothes to sell, as well. I developed an inventory system and enjoyed the process so much that I decided to turn it into a business.</p>
-    <p>Since RePeak Consignment operates online instead of from a physical store, we can reach a much broader audience. We sell on popular platforms like Poshmark, Mercari and Depop, ensuring maximum exposure for our items to potential buyers.</p>
+  <div class="page-head">
+    <div class="wrap">
+      <p class="eyebrow">About</p>
+      <h1>Hello, I'm Meagan.</h1>
+      <p class="lead">Founder of RePeak Consignment.</p>
+    </div>
+    <Ridge />
+  </div>
+  <section>
+    <div class="wrap prose">
+      <p>A few years back, I realized none of my clothes fit anymore, and I needed an entirely new wardrobe. That's when I began selling my clothes online (and buying new-to-me pieces!) and quickly became hooked. After experiencing success, friends started bringing me their clothes to sell, as well. I developed an inventory system and enjoyed the process so much that I decided to turn it into a business.</p>
+      <p>Since RePeak Consignment operates online instead of from a physical store, we can reach a much broader audience. We sell on popular platforms like Poshmark, Mercari and Depop, ensuring maximum exposure for our items to potential buyers.</p>
+    </div>
   </section>
-  <section class="wrap">
-    <h2>Our purpose</h2>
-    <p>At RePeak Consignment, our mission is to make sustainable fashion affordable and accessible. We are dedicated to giving pre-loved items a second life and celebrating their unique stories. Our wide range of styles and sizes promotes conscious consumption and the beauty of sustainable fashion.</p>
-    <a class="button" href="/consign-with-us/">Consign with us</a>
+  <section class="tint">
+    <div class="wrap prose">
+      <p class="eyebrow">Our purpose</p>
+      <h2>Sustainable fashion, affordable and accessible.</h2>
+      <p>We are dedicated to giving pre-loved items a second life and celebrating their unique stories. Our wide range of styles and sizes promotes conscious consumption and the beauty of sustainable fashion.</p>
+      <div class="actions"><a class="btn" href="/consign-with-us/">Consign with us</a></div>
+    </div>
   </section>
 </Base>

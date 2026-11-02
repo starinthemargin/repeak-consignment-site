@@ -1,25 +1,72 @@
 ---
 import Base from '../layouts/Base.astro';
+import Ridge from '../components/Ridge.astro';
+const shops = [
+  { name: 'Poshmark', href: 'https://poshmark.com/closet/repeakconsign' },
+  { name: 'Mercari', href: 'https://www.mercari.com/u/repeakconsignment/' },
+  { name: 'Depop', href: 'https://www.depop.com/repeakconsignment/' },
+];
+const steps = [
+  { title: 'Send us your pieces', text: 'Tell us what you have. We review it and confirm what we can list.' },
+  { title: 'We do the work', text: 'We photograph, price, and list your items where buyers are already shopping.' },
+  { title: 'You get paid', text: 'When a piece sells, you earn your share.' },
+];
 ---
-<Base title="RePeak Consignment | Online consignment store | Denver, CO">
+<Base title="RePeak Consignment | Sustainable online consignment in Denver, CO">
   <div class="hero">
-    <h1>Discover sustainable fashion</h1>
-    <p>Online consignment shop based in Denver, CO.</p>
-    <p>Your wardrobe deserves a second peak. 🏔️ We help your pre-loved pieces reach a wider audience than brick &amp; mortar ever could.</p>
-    <a class="button" href="#shop">Shop our newest treasures</a>
+    <div class="wrap grid">
+      <div>
+        <p class="eyebrow">Online consignment · Denver, CO</p>
+        <h1>Your wardrobe deserves a second peak.</h1>
+        <p class="lead">We help pre-loved apparel, shoes, and accessories reach a wider audience than brick &amp; mortar ever could.</p>
+        <div class="actions">
+          <a class="btn" href="#shop">Shop our closets</a>
+          <a class="btn btn-ghost" href="/consign-with-us/">Consign with us</a>
+        </div>
+      </div>
+      <div class="hero-photo" role="img" aria-label="Pre-loved clothing on a rack"></div>
+    </div>
+    <Ridge />
   </div>
-  <section class="wrap">
-    <h2>Our story</h2>
-    <p>At RePeak Consignment, we are committed to delivering a unique online consignment experience for our buyers and Denver, CO clients. We curate pre-loved apparel, shoes, and accessories, giving buyers affordable and sustainable fashion options.</p>
-    <a class="button" href="/about/">Learn more</a>
+
+  <section id="shop" class="dark">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Shop</p>
+        <h2>Find your next favorite piece</h2>
+        <p class="lead">Browse our newest arrivals on the apps you already use.</p>
+      </div>
+      <div class="cards">
+        {shops.map((s) => (
+          <a class="card" href={s.href}><h3>{s.name}</h3><span>Visit our closet →</span></a>
+        ))}
+      </div>
+    </div>
   </section>
-  <section class="wrap" id="shop">
-    <h2>Discover our newest treasures</h2>
-    <p>Find us on your favorite resale app:</p>
-    <div class="platforms">
-      <a class="button" href="https://poshmark.com/closet/repeakconsign">Poshmark</a>
-      <a class="button" href="https://www.mercari.com/u/repeakconsignment/">Mercari</a>
-      <a class="button" href="https://www.depop.com/repeakconsignment/">Depop</a>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Consign</p>
+        <h2>Clear your closet. We'll handle the climb.</h2>
+      </div>
+      <!-- TODO: confirm process and commission details -->
+      <ol class="steps">
+        {steps.map((s) => <li><h3>{s.title}</h3><p>{s.text}</p></li>)}
+      </ol>
+      <div class="actions"><a class="btn" href="/consign-with-us/">Start consigning</a></div>
+    </div>
+  </section>
+
+  <section class="tint">
+    <div class="wrap split">
+      <div class="photo" role="img" aria-label="Clothing on a rack"></div>
+      <div>
+        <p class="eyebrow">Our purpose</p>
+        <h2>Give great clothes a second life.</h2>
+        <p class="lead">We make sustainable fashion affordable and accessible, celebrating the stories pre-loved pieces carry with them.</p>
+        <div class="actions"><a class="btn btn-ghost" href="/about/">Our story</a></div>
+      </div>
     </div>
   </section>
 </Base>

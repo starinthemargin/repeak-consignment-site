@@ -1,0 +1,10 @@
+---
+// Layered mountain ridgeline used as a section divider. Colour comes from the
+// parent's `color`; `flip` mirrors it so it can sit on top of a section.
+interface Props { flip?: boolean }
+const { flip = false } = Astro.props;
+---
+<svg class:list={['ridge', { flip }]} viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+  <path fill="currentColor" opacity=".35" d="M0 120V72l140-34 120 40 160-58 150 62 140-44 170 52 130-62 150 58 120-30 160 44V120Z" />
+  <path fill="currentColor" d="M0 120V96l120-22 140 24 190-46 140 40 160-50 150 48 170-30 140 36 130-24 100 20V120Z" />
+</svg>

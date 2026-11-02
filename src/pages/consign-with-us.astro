@@ -1,22 +1,40 @@
 ---
 import Base from '../layouts/Base.astro';
+import Ridge from '../components/Ridge.astro';
+const steps = [
+  { title: 'Tell us what you have', text: 'Fill out the form below.' },
+  { title: 'We review', text: 'We confirm what we can list.' },
+  { title: 'We list and sell', text: 'Photos, pricing, and listings are on us.' },
+  { title: 'You get paid', text: 'When a piece sells, you earn your share.' },
+];
 ---
 <Base title="Consign with us | RePeak Consignment">
-  <section class="wrap">
-    <h1>Consign with us</h1>
-    <!-- TODO: confirm process, commission split, and accepted brands -->
-    <ol>
-      <li>Tell us about what you'd like to consign.</li>
-      <li>We review and confirm what we can list.</li>
-      <li>We photograph, list, and sell your pieces.</li>
-      <li>You get paid when they sell.</li>
-    </ol>
-    <!-- TODO: set action to a form endpoint (Formspree, Netlify Forms, etc.) -->
-    <form method="post" action="#">
-      <label>Name <input name="name" required /></label>
-      <label>Email <input name="email" type="email" required /></label>
-      <label>What would you like to consign? <textarea name="items" rows="5" required></textarea></label>
-      <button class="button" type="submit">Send</button>
-    </form>
+  <div class="page-head">
+    <div class="wrap">
+      <p class="eyebrow">Consign</p>
+      <h1>Consign with us</h1>
+      <p class="lead">Turn your pre-loved pieces into something new.</p>
+    </div>
+    <Ridge />
+  </div>
+  <section>
+    <div class="wrap">
+      <!-- TODO: confirm process, commission split, and accepted brands -->
+      <ol class="steps" style="grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));">
+        {steps.map((s) => <li><h3>{s.title}</h3><p>{s.text}</p></li>)}
+      </ol>
+    </div>
+  </section>
+  <section class="tint">
+    <div class="wrap">
+      <h2>Get started</h2>
+      <!-- TODO: set action to a form endpoint (Formspree, Netlify Forms, etc.) -->
+      <form method="post" action="#">
+        <label>Name <input name="name" required /></label>
+        <label>Email <input name="email" type="email" required /></label>
+        <label>What would you like to consign? <textarea name="items" rows="5" required></textarea></label>
+        <button class="btn" type="submit">Send</button>
+      </form>
+    </div>
   </section>
 </Base>

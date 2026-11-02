@@ -1,7 +1,10 @@
 ---
+import '@fontsource-variable/inter';
+import '@fontsource-variable/fraunces';
 import '../styles/global.css';
+import Ridge from '../components/Ridge.astro';
 interface Props { title: string; description?: string }
-const { title, description = 'Online consignment shop based in Denver, CO. Your wardrobe deserves a second peak.' } = Astro.props;
+const { title, description = 'Online consignment based in Denver, CO. Sustainable, pre-loved fashion with a second peak.' } = Astro.props;
 const path = Astro.url.pathname;
 const platforms = [
   { href: 'https://poshmark.com/closet/repeakconsign', label: 'Poshmark' },
@@ -9,7 +12,8 @@ const platforms = [
   { href: 'https://www.depop.com/repeakconsignment/', label: 'Depop' },
 ];
 const links = [
-  { href: '/consign-with-us/', label: 'Consign with us' },
+  { href: '/#shop', label: 'Shop' },
+  { href: '/consign-with-us/', label: 'Consign' },
   { href: '/about/', label: 'About' },
 ];
 ---
@@ -24,20 +28,35 @@ const links = [
   </head>
   <body>
     <header class="site">
-      <div class="wrap">
-        <a class="brand" href="/"><img src="/logo-white.png" alt="RePeak Consignment" width="120" height="120" /></a>
-        <nav>
+      <div class="wrap bar">
+        <a class="brand" href="/" aria-label="RePeak Consignment home"><img src="/logo-green.png" alt="RePeak Consignment" width="160" height="153" /></a>
+        <nav aria-label="Main">
           {links.map((l) => <a href={l.href} aria-current={path === l.href ? 'page' : undefined}>{l.label}</a>)}
+          <a class="btn btn-sm" href="/consign-with-us/">Consign with us</a>
         </nav>
       </div>
     </header>
     <main><slot /></main>
-    <footer>
-      <div class="wrap">
-        <p>Denver, CO</p>
-        <p>Shop with us: {platforms.map((l, i) => <>{i > 0 && ' · '}<a href={l.href}>{l.label}</a></>)}</p>
-        <p>&copy; {new Date().getFullYear()} RePeak Consignment</p>
+    <footer class="site">
+      <Ridge flip />
+      <div class="wrap foot">
+        <div>
+          <img src="/logo-white.png" alt="RePeak Consignment" width="120" height="115" />
+          <p>Online consignment · Denver, CO</p>
+        </div>
+        <div>
+          <h2>Shop</h2>
+          <ul>{platforms.map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
+        </div>
+        <div>
+          <h2>Explore</h2>
+          <ul>
+            <li><a href="/consign-with-us/">Consign with us</a></li>
+            <li><a href="/about/">About</a></li>
+          </ul>
+        </div>
       </div>
+      <p class="wrap legal">&copy; {new Date().getFullYear()} RePeak Consignment</p>
     </footer>
   </body>
 </html>
