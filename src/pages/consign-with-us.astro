@@ -2,7 +2,6 @@
 import Base from '../layouts/Base.astro';
 import Ridge from '../components/Ridge.astro';
 import { steps } from '../data/steps';
-import { waitListOpen } from '../data/consign';
 const email = 'info@repeakconsignment.com';
 const checks = [
   'Freshly laundered or dry cleaned',
@@ -64,17 +63,9 @@ const checks = [
       <div class="detail">
         <h3>Drop-offs</h3>
         <div>
-          <p>We're a home-based, online-only shop with limited storage space, so we work from a wait list. Because of the effort it takes to prepare items for listing, please bring no more than <strong>25 items per appointment</strong>.</p>
-          {waitListOpen
-            ? <p>Email us to join the wait list, and we'll contact you when space opens up.</p>
-            : <p><strong>Our wait list is currently full.</strong> Please check back soon.</p>}
-        </div>
-      </div>
-
-      <div class="detail">
-        <h3>Drop &amp; Go</h3>
-        <div>
-          <p>Have you consigned with us before? Use Drop &amp; Go: drop off your items during your scheduled time and go on about your day. Email <a href={`mailto:${email}?subject=Schedule%20a%20Drop%20%26%20Go%20Time`}>{email}</a> to schedule. Drop &amp; Go is limited to 25 items per client, and items should follow the guidelines above.</p>
+          <p>We're a home-based, online-only shop with limited storage space, so we take on new clients as space allows. Email us to ask about availability.</p>
+          <p>Because of the effort it takes to prepare items for listing, please bring no more than <strong>25 items per appointment</strong>.</p>
+          <p><strong>Drop &amp; Go for returning clients.</strong> If you've consigned with us before, drop off your items during your scheduled time and go on about your day. Email <a href={`mailto:${email}?subject=Schedule%20a%20Drop%20%26%20Go%20Time`}>{email}</a> to schedule. Drop &amp; Go is limited to 25 items per client, and items should follow the guidelines above.</p>
         </div>
       </div>
 
