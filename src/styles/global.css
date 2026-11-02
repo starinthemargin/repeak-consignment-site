@@ -150,6 +150,8 @@ footer.site::after { content: none; }
   .tiles a { width: 100%; aspect-ratio: auto; padding: 1.5rem; }
   .tiles .plogo { width: 55%; max-width: 11rem; }
   .foot { gap: 1.75rem; }
+  .az .wrap { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+  .brand-group { scroll-margin-top: 7.5rem; grid-template-columns: 3rem 1fr; }
   section { padding: 3rem 0; }
   nav { gap: .9rem; font-size: .92rem; }
   nav .btn { display: none; }
