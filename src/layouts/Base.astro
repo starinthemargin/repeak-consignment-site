@@ -1,0 +1,36 @@
+---
+import '../styles/global.css';
+interface Props { title: string; description?: string }
+const { title, description = 'Online consignment shop based in Denver, CO. Your wardrobe deserves a second peak.' } = Astro.props;
+const path = Astro.url.pathname;
+const links = [
+  { href: '/consign-with-us/', label: 'Consign with us' },
+  { href: '/about/', label: 'About' },
+];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header class="site">
+      <div class="wrap">
+        <a class="brand" href="/">RePeak Consignment</a>
+        <nav>
+          {links.map((l) => <a href={l.href} aria-current={path === l.href ? 'page' : undefined}>{l.label}</a>)}
+        </nav>
+      </div>
+    </header>
+    <main><slot /></main>
+    <footer>
+      <div class="wrap">
+        <p>Denver, CO · <a href="https://poshmark.com/closet/repeakconsign">Shop on Poshmark</a></p>
+        <p>&copy; {new Date().getFullYear()} RePeak Consignment</p>
+      </div>
+    </footer>
+  </body>
+</html>

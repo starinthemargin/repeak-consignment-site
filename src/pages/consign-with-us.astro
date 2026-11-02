@@ -1,0 +1,22 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Consign with us | RePeak Consignment">
+  <section class="wrap">
+    <h1>Consign with us</h1>
+    <!-- TODO: confirm process, commission split, and accepted brands -->
+    <ol>
+      <li>Tell us about what you'd like to consign.</li>
+      <li>We review and confirm what we can list.</li>
+      <li>We photograph, list, and sell your pieces.</li>
+      <li>You get paid when they sell.</li>
+    </ol>
+    <!-- TODO: set action to a form endpoint (Formspree, Netlify Forms, etc.) -->
+    <form method="post" action="#">
+      <label>Name <input name="name" required /></label>
+      <label>Email <input name="email" type="email" required /></label>
+      <label>What would you like to consign? <textarea name="items" rows="5" required></textarea></label>
+      <button class="button" type="submit">Send</button>
+    </form>
+  </section>
+</Base>
