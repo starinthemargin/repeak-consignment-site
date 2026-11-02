@@ -10,8 +10,11 @@
 body { margin: 0; font-family: Georgia, 'Times New Roman', serif; color: var(--ink); background: var(--cream); line-height: 1.6; }
 a { color: var(--forest); }
 .wrap { max-width: var(--max); margin: 0 auto; padding: 0 1rem; }
-header.site { background: var(--mist); }
-header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-top: .75rem; padding-bottom: .75rem; flex-wrap: wrap; }
+header.site { background: var(--forest-dark); }
+header.site a { color: #fff; }
+header.site .brand img { display: block; width: 90px; height: 90px; object-fit: contain; }
+.platforms { display: flex; gap: 1rem; flex-wrap: wrap; }
+header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-top: .25rem; padding-bottom: .25rem; flex-wrap: wrap; }
 header.site .brand { font-weight: bold; letter-spacing: .15em; text-decoration: none; text-transform: uppercase; }
 nav a { margin-left: 1.25rem; text-decoration: none; }
 nav a[aria-current='page'] { text-decoration: underline; }
